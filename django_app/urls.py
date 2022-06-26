@@ -10,6 +10,4 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('', start_screen,name='start-screen')
 
-    
-
 ]
