@@ -78,17 +78,23 @@ WSGI_APPLICATION = 'django_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE':'django.db.backends.postgresql',
+#         'NAME': os.environ['NAME'],
+#         'USER': os.environ['USER'],
+#         'PASSWORD':os.environ['PASSWORD'],
+#         'HOST':os.environ['HOST'],
+#         'PORT': os.environ['PORT'],
+#     }
+# }
+PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 DATABASES = {
     'default': {
-        'ENGINE':'django.db.backends.postgresql',
-        'NAME': os.environ['NAME'],
-        'USER': os.environ['USER'],
-        'PASSWORD':os.environ['PASSWORD'],
-        'HOST':os.environ['HOST'],
-        'PORT': os.environ['PORT'],
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(PROJECT_DIR, 'blog.db'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
